@@ -2,13 +2,31 @@
 <html>
 <head>
     <title>Name Generator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        function generateName() {
+            const validLetters = "bfghjklpstwxy";
+            const vowels = "io";
+            const ending = "ng";
+
+            const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+            let name = getRandomElement(validLetters) + getRandomElement(vowels) + ending;
+
+            if (name[0] === "q") {
+                name = "qu" + name.substring(1);
+            }
+            
+            document.getElementById("name").textContent = name;
+        }
+    </script>
 </head>
 <body>
     <h1>Name Generator</h1>
-    <ul>
-        {% for name in names %}
-        <li>{{ name }}</li>
-        {% endfor %}
-    </ul>
+    <div class="generator">
+        <button onclick="generateName()">Generate Name</button>
+        <h2 id="name"></h2>
+    </div>
 </body>
 </html>
+
