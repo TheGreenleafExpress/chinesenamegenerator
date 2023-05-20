@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Name Generator</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <script>
+    <title>Chinese Name Generator</title>
         function generateName() {
-            const validLetters = "b","f","g","h","j","k","l","p","s","t","w","x","y","ch";
-            const vowels = "i,o";
+            const validStarters = ["ch", "b", "f", "g", "h", "j", "k", "l", "p", "s", "t", "w", "x", "y"];
+            const vowels = "io";
             const ending = "ng";
 
             const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-            let name = getRandomElement(validLetters) + getRandomElement(vowels) + ending;
+            let name = getRandomElement(validStarters) + getRandomElement(vowels) + ending;
 
             if (name[0] === "q") {
                 name = "qu" + name.substring(1);
@@ -22,9 +20,9 @@
     </script>
 </head>
 <body>
-    <h1>Name Generator</h1>
+    <h1>Chinese Name Generator</h1>
     <div class="generator">
-        <button onclick="generateName()">Generate Name</button>
+        <button onclick="generateName()">Generate Racist Name</button>
         <h2 id="name"></h2>
     </div>
 </body>
