@@ -3,10 +3,16 @@
 <head>
     <title>Name Generator</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
     <script>
         function generateName() {
             const validStarters = ["ch", "b", "f", "g", "h", "j", "k", "l", "p", "s", "t", "w", "x", "y"];
-            const vowels = "io";
+            const vowels = ["i", "o"];
             const ending = "ng";
 
             const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -16,14 +22,22 @@
             if (name[0] === "q") {
                 name = "qu" + name.substring(1);
             }
-            
-            document.getElementById("name").textContent = name;
+
+            const imageContainer = document.getElementById("image-container");
+            const image = document.createElement("img");
             
             if (name[1] === "i") {
-                document.getElementById("image").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ZTf5E-DIFHfT_5RtA9pVYc5hBQ1UEl129nZqcpaCYUtSXz7gmOxsmD3iJMGfeqVWwEg:https://img.freepik.com/premium-vector/character-chinese-man-traditional-clothes-flat-illustration_625341-753.jpg%3Fw%3D2000&usqp=CAU";
+                image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ZTf5E-DIFHfT_5RtA9pVYc5hBQ1UEl129nZqcpaCYUtSXz7gmOxsmD3iJMGfeqVWwEg:https://img.freepik.com/premium-vector/character-chinese-man-traditional-clothes-flat-illustration_625341-753.jpg%3Fw%3D2000&usqp=CAU";
+            } else if (name[1] === "o") {
+                image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFcY_dtMmMk5xg7n8THzTy5AMbUFyfXLCnMotpqvqbh1fjCzTADymMKrf7qlW8SBUKQ0:www.angryasianman.com/images/angry/halloween2015_19.jpg&usqp=CAU";
             } else {
-                document.getElementById("image").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUOVJC6jyYpmj6JvPwmOfnqD5T0ttYFkoigd68WUk93oTFaC17Pxwrv92v6lWBr5LIN30:images.china.cn/site1007/2019-09/05/d3ad8b79-19ea-42aa-9560-c2bef3f84014.jpg&usqp=CAU";
+                // Default image when not "i" or "o"
+                image.src = "default-image.jpg";
             }
+
+            imageContainer.innerHTML = "";
+            imageContainer.appendChild(image);
+            document.getElementById("name").textContent = name;
         }
     </script>
 </head>
@@ -32,7 +46,7 @@
     <div class="generator">
         <button onclick="generateName()">Generate Name</button>
         <h2 id="name"></h2>
-        <img id="image" src="" alt="Image">
     </div>
+    <div class="image-container" id="image-container"></div>
 </body>
 </html>
