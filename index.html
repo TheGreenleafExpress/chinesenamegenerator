@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chinese Name Generator</title>
-    <script>    
-    function generateName() {
+    <title>Name Generator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        function generateName() {
             const validStarters = ["ch", "b", "f", "g", "h", "j", "k", "l", "p", "s", "t", "w", "x", "y"];
             const vowels = "io";
             const ending = "ng";
@@ -17,14 +18,21 @@
             }
             
             document.getElementById("name").textContent = name;
+            
+            if (name[1] === "i") {
+                document.getElementById("image").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ZTf5E-DIFHfT_5RtA9pVYc5hBQ1UEl129nZqcpaCYUtSXz7gmOxsmD3iJMGfeqVWwEg:https://img.freepik.com/premium-vector/character-chinese-man-traditional-clothes-flat-illustration_625341-753.jpg%3Fw%3D2000&usqp=CAU";
+            } else {
+                document.getElementById("image").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUOVJC6jyYpmj6JvPwmOfnqD5T0ttYFkoigd68WUk93oTFaC17Pxwrv92v6lWBr5LIN30:images.china.cn/site1007/2019-09/05/d3ad8b79-19ea-42aa-9560-c2bef3f84014.jpg&usqp=CAU";
+            }
         }
     </script>
 </head>
 <body>
-    <h1>Chinese Name Generator</h1>
+    <h1>Name Generator</h1>
     <div class="generator">
-        <button onclick="generateName()">Generate Racist Name</button>
+        <button onclick="generateName()">Generate Name</button>
         <h2 id="name"></h2>
+        <img id="image" src="" alt="Image">
     </div>
 </body>
 </html>
