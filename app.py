@@ -8,7 +8,7 @@ def generate_name():
     vowels = "io"
     ending = "ng"
 
-    name = random.choice(consonants + "ch")  # First letter is a consonant or 'ch'
+    name = random.choice(consonants + "ch" + "sh")  # First letter is a consonant or 'ch'
     name += random.choice(vowels)  # Second letter is 'i' or 'o'
     name += ending  # Last two letters are 'ng'
 
