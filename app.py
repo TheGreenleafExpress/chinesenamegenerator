@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 def generate_name():
     consonants = "bcdfghjklmnpqrstvwxyz"
-    vowels = "io"
+    vowels = "iou"
     ending = "ng"
 
     name = random.choice(consonants + "ch" + "sh")  # First letter is a consonant or 'ch'
