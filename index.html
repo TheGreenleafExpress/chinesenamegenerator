@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Stereo Typical Chinese Name Generator</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Stereotypical Chinese Name Generator</title>
     <style>
         .image-container {
             text-align: center;
@@ -12,7 +11,7 @@
     <script>
         function generateName() {
             const validStarters = ["sh", "ch", "b", "f", "g", "h", "j", "k", "l", "p", "s", "t", "w", "x", "y"];
-            const vowels = ["i", "o", "u",];
+            const vowels = ["i", "o", "u"];
             const ending = "ng";
 
             const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
@@ -27,18 +26,17 @@
             const image = document.createElement("img");
 
             if (name[1] === "i") {
-                image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5ZTf5E-DIFHfT_5RtA9pVYc5hBQ1UEl129nZqcpaCYUtSXz7gmOxsmD3iJMGfeqVWwEg:https://img.freepik.com/premium-vector/character-chinese-man-traditional-clothes-flat-illustration_625341-753.jpg%3Fw%3D2000&usqp=CAU";
+                image.src = "https://img.freepik.com/premium-vector/character-chinese-man-traditional-clothes-flat-illustration_625341-753.jpg";
             } else if (name[1] === "o") {
-                image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFcY_dtMmMk5xg7n8THzTy5AMbUFyfXLCnMotpqvqbh1fjCzTADymMKrf7qlW8SBUKQ0:www.angryasianman.com/images/angry/halloween2015_19.jpg&usqp=CAU";
-            } else if (name[1] === "i") {
-                image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSApcYZjxgWoItqVK_EgJaj1JpdrMGCFQ-zD7SQO4ZKiWcXDqqE-H3xux2sGSK1nnTUkVw:https://www.shutterstock.com/image-vector/kim-jongun-nuclear-missile-cartoon-260nw-629567858.jpg&usqp=CAU";
-            } else if (name[1] === "o") {
-                image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYzvq8GTYU57CZPXQmp2ImaP2alSTbCxX-0HctsmUcEdgf-vwZXbNL_Z89On2p6rT2PIQ:https://thumbs.dreamstime.com/b/chinese-man-old-hat-guangxi-region-traditional-type-face-china-june-china-average-life-expectancy-30615533.jpg&usqp=CAU";
+                image.src = "https://www.angryasianman.com/images/angry/halloween2015_19.jpg";
             } else {
                 // Default image when not "i" or "o"
-                image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWVsrJ6Yf4Vci8dy2P7X4Da7Lt1B7dG8rheqagH-u_XwX793sUY968Ta8xuCEVhjlEsvE:https://cdn.drawception.com/images/panels/2016/11-2/BBO2rQfbxm-8.png&usqp=CAU";
+                image.src = "https://cdn.drawception.com/images/panels/2016/11-2/BBO2rQfbxm-8.png";
             }
 
+            image.alt = "Chinese Character";
+            image.style.maxWidth = "100%";
+            
             imageContainer.innerHTML = "";
             imageContainer.appendChild(image);
             document.getElementById("name").textContent = name;
@@ -46,7 +44,8 @@
     </script>
 </head>
 <body>
-    <div class="generator">
+    <div class="generator" style="text-align: center; margin-top: 20px;">
+        <h1>Stereotypical Chinese Name Generator</h1>
         <button onclick="generateName()">Generate Name</button>
         <h2 id="name"></h2>
     </div>
